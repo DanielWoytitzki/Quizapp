@@ -1,3 +1,14 @@
-body {
-    background-color: rgba(254,250,239,255) !important;
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.quiz-section {
+    background-color: rgba(254,250,239,255);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
 }
