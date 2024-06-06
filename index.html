@@ -30,7 +30,23 @@
     <section class="quiz-section">
         <div class="card quiz-card">
             <img src="img/quiz-card-header.webp" class="card-img-top">
-            <div class="card-body">
+            <div class="card-body endscreen" id="endscreen" style="display: none;">
+                <div class="endscreen-logo-box">
+                    <img class="endscreen-logo" src="img/endscreen-logo.webp" alt="">
+                </div>
+                <span>
+                    <h5>Quiz beendet!</h5>
+                </span>
+                <div class="endscreen-score">
+                    <span><b style="color: rgba(236,136,60,255);">YOUR SCORE</b></span>
+                    <span><b>10 / 10</b></span>
+                </div>
+                <div class="endscreen-footer">
+                    <button class="btn btn-primary">SHARE</button>
+                    <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">REPLAY</a>
+                </div>
+            </div>
+            <div class="card-body" id="questionbody">
                 <h5 class="card-title" id="question">Frage</h5>
 
                 <div class="card quiz-answer-card mb-2" onclick="clickAnswer('answer_1')">

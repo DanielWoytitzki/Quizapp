@@ -67,16 +67,21 @@ function init() {
 }
 
 function showQuestion() {
-    let question = questions[currentQuestion];
+    if (currentQuestion >= questions.length) {
+        document.getElementById('endscreen').style = '';
+        document.getElementById('questionbody').style = 'display: none';
+    } else {
+        let question = questions[currentQuestion];
 
-    document.getElementById('currentquestionnumber').innerHTML = currentQuestion + 1
-    document.getElementById('nextbutton').disabled = true;
+        document.getElementById('currentquestionnumber').innerHTML = currentQuestion + 1
+        document.getElementById('nextbutton').disabled = true;
 
-    document.getElementById('question').innerHTML = question['question'];
-    document.getElementById('answer_1').innerHTML = question['answer_1'];
-    document.getElementById('answer_2').innerHTML = question['answer_2'];
-    document.getElementById('answer_3').innerHTML = question['answer_3'];
-    document.getElementById('answer_4').innerHTML = question['answer_4'];
+        document.getElementById('question').innerHTML = question['question'];
+        document.getElementById('answer_1').innerHTML = question['answer_1'];
+        document.getElementById('answer_2').innerHTML = question['answer_2'];
+        document.getElementById('answer_3').innerHTML = question['answer_3'];
+        document.getElementById('answer_4').innerHTML = question['answer_4'];
+    }
 }
 
 function clickAnswer(selection) {
@@ -86,13 +91,13 @@ function clickAnswer(selection) {
 
     document.getElementById('nextbutton').disabled = true;
 
-    if(selectedQuestionNumber == question['right_answer']) {
+    if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     }
-    
+
     document.getElementById('nextbutton').disabled = false;
 }
 
