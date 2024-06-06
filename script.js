@@ -69,6 +69,8 @@ function init() {
 function showQuestion() {
     let question = questions[currentQuestion];
 
+    document.getElementById('nextbutton').disabled = true;
+
     document.getElementById('question').innerHTML = question['question'];
     document.getElementById('answer_1').innerHTML = question['answer_1'];
     document.getElementById('answer_2').innerHTML = question['answer_2'];
@@ -78,16 +80,17 @@ function showQuestion() {
 
 function clickAnswer(selection) {
     let question = questions[currentQuestion];
-    console.log('selected answer is ', selection)
     let selectedQuestionNumber = selection.slice(-1);
-    console.log('selectedQuestionNumber is ', selectedQuestionNumber);
-    console.log('current question is ', question['right_answer']);
+    let idOfRightAnswer = `answer_${question['right_answer']}`;
+
+    document.getElementById('nextbutton').disabled = true;
 
     if(selectedQuestionNumber == question['right_answer']) {
-        console.log('NICE!');
         document.getElementById(selection).parentNode.classList.add('bg-success');
     } else {
-        console.log('not NICE!');
         document.getElementById(selection).parentNode.classList.add('bg-danger');
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     }
+    
+    document.getElementById('nextbutton').disabled = false;
 }
