@@ -35,3 +35,12 @@ header {
 .btn-primary:hover {
     background-color: rgb(73, 130, 187) !important;
 }
+
+.quiz-answer-card:hover {
+    background-color: rgba(49,96,143,0.05);
+    cursor: pointer;
+}
+
+.bg-success, .bg-danger {
+    color: white !important;
+}

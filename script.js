@@ -70,8 +70,24 @@ function showQuestion() {
     let question = questions[currentQuestion];
 
     document.getElementById('question').innerHTML = question['question'];
-    document.getElementById('answer1').innerHTML = question['answer_1'];
-    document.getElementById('answer2').innerHTML = question['answer_2'];
-    document.getElementById('answer3').innerHTML = question['answer_3'];
-    document.getElementById('answer4').innerHTML = question['answer_4'];
+    document.getElementById('answer_1').innerHTML = question['answer_1'];
+    document.getElementById('answer_2').innerHTML = question['answer_2'];
+    document.getElementById('answer_3').innerHTML = question['answer_3'];
+    document.getElementById('answer_4').innerHTML = question['answer_4'];
+}
+
+function clickAnswer(selection) {
+    let question = questions[currentQuestion];
+    console.log('selected answer is ', selection)
+    let selectedQuestionNumber = selection.slice(-1);
+    console.log('selectedQuestionNumber is ', selectedQuestionNumber);
+    console.log('current question is ', question['right_answer']);
+
+    if(selectedQuestionNumber == question['right_answer']) {
+        console.log('NICE!');
+        document.getElementById(selection).parentNode.classList.add('bg-success');
+    } else {
+        console.log('not NICE!');
+        document.getElementById(selection).parentNode.classList.add('bg-danger');
+    }
 }
