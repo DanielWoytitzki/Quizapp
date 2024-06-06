@@ -69,6 +69,7 @@ function init() {
 function showQuestion() {
     let question = questions[currentQuestion];
 
+    document.getElementById('currentquestionnumber').innerHTML = currentQuestion + 1
     document.getElementById('nextbutton').disabled = true;
 
     document.getElementById('question').innerHTML = question['question'];
@@ -93,4 +94,21 @@ function clickAnswer(selection) {
     }
     
     document.getElementById('nextbutton').disabled = false;
+}
+
+function nextQuestion() {
+    currentQuestion++;
+    resetAnswers();
+    showQuestion();
+}
+
+function resetAnswers() {
+    document.getElementById('answer_1').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_1').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-success');
 }
