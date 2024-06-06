@@ -6,7 +6,10 @@ header {
 }
 
 .quiz-section {
-    background-color: rgba(254,250,239,255);
+    background-image: url(img/background.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(0,6,22);
     min-height: 100vh;
     display: flex;
     justify-content: center;    
@@ -14,10 +17,21 @@ header {
 }
 
 .quiz-card {
-    width: 30rem;
+    width: 40rem;
 }
 
 .question-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.btn-primary {
+    background-color: rgb(49,96,143) !important;
+}
+
+.btn-primary:hover {
+    background-color: rgb(73, 130, 187) !important;
 }
