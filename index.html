@@ -17,7 +17,7 @@
     <title>Quizapp</title>
 </head>
 
-<body>
+<body onload="init()">
 
     <header>
         <nav class="navbar bg-body-tertiary">
@@ -31,41 +31,40 @@
         <div class="card quiz-card">
             <img src="img/quiz-card-header.webp" class="card-img-top">
             <div class="card-body">
-                <h5 class="card-title">Frage</h5>
+                <h5 class="card-title" id="question">Frage</h5>
 
                 <div class="card mb-2">
-                    <div class="card-body">
+                    <div class="card-body" id="answer1">
                         Antwort 1
                     </div>
                 </div>
 
                 <div class="card mb-2">
-                    <div class="card-body">
+                    <div class="card-body" id="answer2">
                         Antwort 2
                     </div>
                 </div>
 
                 <div class="card mb-2">
-                    <div class="card-body">
+                    <div class="card-body" id="answer3">
                         Antwort 3
                     </div>
                 </div>
 
                 <div class="card mb-2">
-                    <div class="card-body">
+                    <div class="card-body" id="answer4">
                         Antwort 4
                     </div>
                 </div>
 
                 <div class="question-footer">
                     <div>
-                        <b>1</b> von <b>5</b> Fragen
+                        <b>1</b> von <b id="allquestionsnumber"></b> Fragen
                     </div>
                     <div>
                         <button class="btn btn-primary">Nächste Frage</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

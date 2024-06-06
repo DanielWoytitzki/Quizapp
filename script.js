@@ -56,3 +56,22 @@ let questions = [
         "right_answer": 2
     }
 ];
+
+let currentQuestion = 0;
+
+
+function init() {
+    document.getElementById('allquestionsnumber').innerHTML = questions.length;
+
+    showQuestion();
+}
+
+function showQuestion() {
+    let question = questions[currentQuestion];
+
+    document.getElementById('question').innerHTML = question['question'];
+    document.getElementById('answer1').innerHTML = question['answer_1'];
+    document.getElementById('answer2').innerHTML = question['answer_2'];
+    document.getElementById('answer3').innerHTML = question['answer_3'];
+    document.getElementById('answer4').innerHTML = question['answer_4'];
+}
