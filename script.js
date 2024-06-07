@@ -70,28 +70,46 @@ function init() {
 }
 
 function showQuestion() {
-    if (currentQuestion >= questions.length) {
-        document.getElementById('endscreen').style = '';
-        document.getElementById('allquestionsendscore').innerHTML = questions.length;
-        document.getElementById('rightquestionsendscore').innerHTML = rightQuestions;
-        document.getElementById('questionbody').style = 'display: none';
+    if (gameIsOver()) {
+        showEndScreen();
     } else {
-        let percent = currentQuestion / questions.length;
-        percent = Math.round(percent * 100);
-        console.log('Fortschritt', percent);
-        let question = questions[currentQuestion];
-
-        document.getElementById('currentquestionnumber').innerHTML = currentQuestion + 1
-        document.getElementById('nextbutton').disabled = true;
-        document.getElementById('progressbar').innerHTML = `${percent} %`;
-        document.getElementById('progressbar').style = `width: ${percent}%;`;
-
-        document.getElementById('question').innerHTML = question['question'];
-        document.getElementById('answer_1').innerHTML = question['answer_1'];
-        document.getElementById('answer_2').innerHTML = question['answer_2'];
-        document.getElementById('answer_3').innerHTML = question['answer_3'];
-        document.getElementById('answer_4').innerHTML = question['answer_4'];
+        updateProgressBar();
+        updateToNextQuestion();
     }
+}
+
+function gameIsOver() {
+    return currentQuestion >= questions.length;
+}
+
+function showEndScreen() {
+    document.getElementById('endscreen').style = '';
+    document.getElementById('allquestionsendscore').innerHTML = questions.length;
+    document.getElementById('rightquestionsendscore').innerHTML = rightQuestions;
+    document.getElementById('questionbody').style = 'display: none';
+}
+
+function updateProgressBar() {
+    let percent = currentQuestion / questions.length;
+    percent = Math.round(percent * 100);
+
+    document.getElementById('progressbar').innerHTML = `${percent} %`;
+    document.getElementById('progressbar').style = `width: ${percent}%;`;
+}
+
+function updateToNextQuestion() {
+
+    let question = questions[currentQuestion];
+
+    document.getElementById('currentquestionnumber').innerHTML = currentQuestion + 1
+    document.getElementById('nextbutton').disabled = true;
+    
+
+    document.getElementById('question').innerHTML = question['question'];
+    document.getElementById('answer_1').innerHTML = question['answer_1'];
+    document.getElementById('answer_2').innerHTML = question['answer_2'];
+    document.getElementById('answer_3').innerHTML = question['answer_3'];
+    document.getElementById('answer_4').innerHTML = question['answer_4'];
 }
 
 function clickAnswer(selection) {
