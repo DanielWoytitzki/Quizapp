@@ -92,6 +92,7 @@ header {
 .endscreen-footer a {
     color: rgb(49,96,143);
     font-weight: 500;
+    cursor: pointer;
 }
 
 .endscreen-footer button {

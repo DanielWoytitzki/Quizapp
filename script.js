@@ -126,3 +126,12 @@ function resetAnswers() {
     document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
     document.getElementById('answer_4').parentNode.classList.remove('bg-success');
 }
+
+function restartGame() {
+    rightQuestions = 0;
+    currentQuestion = 0;
+
+    document.getElementById('endscreen').style = 'display: none;';
+    document.getElementById('questionbody').style = '';
+    init();
+}
