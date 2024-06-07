@@ -74,10 +74,15 @@ function showQuestion() {
         document.getElementById('rightquestionsendscore').innerHTML = rightQuestions;
         document.getElementById('questionbody').style = 'display: none';
     } else {
+        let percent = currentQuestion / questions.length;
+        percent = Math.round(percent * 100);
+        console.log('Fortschritt', percent);
         let question = questions[currentQuestion];
 
         document.getElementById('currentquestionnumber').innerHTML = currentQuestion + 1
         document.getElementById('nextbutton').disabled = true;
+        document.getElementById('progressbar').innerHTML = `${percent} %`;
+        document.getElementById('progressbar').style = `width: ${percent}%;`;
 
         document.getElementById('question').innerHTML = question['question'];
         document.getElementById('answer_1').innerHTML = question['answer_1'];

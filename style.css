@@ -98,3 +98,7 @@ header {
     width: 144px; 
     border-radius: 8px;
 }
+
+.progress {
+    margin-top: 10px;
+}
